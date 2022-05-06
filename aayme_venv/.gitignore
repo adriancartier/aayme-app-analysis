@@ -1,0 +1,5 @@
+# created by virtualenv automatically
+.ipynb_checkpoints
+.config
+venv
+aayme_applications.csv
