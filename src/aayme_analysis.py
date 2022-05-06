@@ -107,4 +107,5 @@ def create_map(table, zips, mapped_feature, add_text = ''):
     # save map with filename based on the feature of interest
     m.save(outfile = "../images/" + mapped_feature + '_map.html')
 
-create_map(geo_agg, 'Postal / Zip Code', 'total_applications')
+# Call the create_map function which writes the map to an html file
+create_map(geo_agg, 'Postal / Zip Code', 'total_applications') 
