@@ -18,7 +18,7 @@ What you can see from the plot below we still managed to get a decent swath from
 <img src = "https://user-images.githubusercontent.com/5818620/167070262-62d04d0f-a66d-43c5-9a7f-000f3f4174ec.gif">
 </p>
 
-# How do the candidates split out?
+# How do the applicants split out?
 In addition to geospatial coverage we also aimed to have a balance across grade and income. The initial goal of AAYME was to provide an MSMS-like experience to African American students from low income families who might otherwise not have the opportunity. To that end, we wanted to ensure that when we selected camper this year that that vision is still realised. The charts below show the breakout across Income, and Grade Level. 
 
 Household Income            |  Current Grade Level     | Sex                         |
