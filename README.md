@@ -26,4 +26,4 @@ In addition to geospatial coverage we also aimed to have a balance across grade 
 
 Household Income            |  Current Grade Level     | Sex                         |
 :-------------------------:|:-------------------------:|:---------------------------:|
-![Household Income](https://github.com/adriancartier/aayme-app-analysis/blob/main/images/Household%20Income.png) |  ![Current Grade Level](https://github.com/adriancartier/aayme-app-analysis/blob/main/images/Current%20Grade%20Level.png) | ![Sex](https://user-images.githubusercontent.com/5818620/167067555-dc52bcdc-2134-4e09-8f90-d61619173763.png)
+![Household Income](https://github.com/adriancartier/aayme-app-analysis/blob/main/images/Household%20Income.png) |  ![Current Grade Level](https://github.com/adriancartier/aayme-app-analysis/blob/main/images/Current%20Grade%20Level.png) | ![Sex](https://github.com/adriancartier/aayme-app-analysis/blob/main/images/Sex.png)
