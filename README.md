@@ -8,7 +8,7 @@ This repository contains simple EDA on the submissions to the AAYME Summer Camp.
 The chart below shows the time series of the application submissions. It can easily be seen the spike noticed in April was largely due to the changes that were made to the application to limit the friction in applying. 
 
 <p align="center">
-<img src = "https://user-images.githubusercontent.com/5818620/167065533-677f6dd1-ffdf-4f85-9127-54d5bb141911.png">
+<img src = "https://github.com/adriancartier/aayme-app-analysis/blob/main/images/app_submission_tsplot.png">
 </p>
 
 # Where are the applications coming from?
