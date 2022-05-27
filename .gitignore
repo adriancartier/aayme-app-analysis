@@ -134,3 +134,4 @@ venv
 aayme_applications.csv
 *.csv
 *.xlsm
+/aayme_venv
