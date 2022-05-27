@@ -21,7 +21,7 @@ print('Date field has been modified')
 def plot_app_submission(df):
     '''Plot timeseries of application submission using a generalised function'''
     esd = df.groupby('date', as_index=True).size()
-    fig = px.line(esd, x=esd.index, y=esd.values, title="AAYME Applications")
+    fig = px.line(esd, x=esd.index, y=esd.values, title="AAYME Applications", width=1800, height=600)
     fig.write_image("../images/app_submission_tsplot.png")
     print('Plots have been saved to your images directory')
     
