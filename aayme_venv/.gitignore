@@ -3,3 +3,6 @@
 .config
 venv
 aayme_applications.csv
+*.csv
+*.xlsm
+
