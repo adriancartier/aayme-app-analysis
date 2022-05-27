@@ -9,7 +9,6 @@ import plotly.express as px
 import os 
 import folium
 
-
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
@@ -21,21 +20,26 @@ print('Date field has been modified')
 
 def plot_app_submission(df):
     '''Plot timeseries of application submission using a generalised function'''
-    esd = df.groupby('date', as_index=False).size()
-    fig = px.line(esd, x='date', y="size", title="AAYME Applications")
+    esd = df.groupby('date', as_index=True).size()
+    fig = px.line(esd, x=esd.index, y=esd.values, title="AAYME Applications")
     fig.write_image("../images/app_submission_tsplot.png")
     print('Plots have been saved to your images directory')
     
 plot_app_submission(aayme_applications)
 
+'''
+Only plot demographic information and spatial map based on qualified students 
+'''
+aayme_applications = aayme_applications.dropna(subset = ['Qualified'])
+aayme_applications = aayme_applications[aayme_applications['Qualified'] ==  "Yes"] 
 def plot_feature_stats(df, dimension):
     '''
     This function will provide pie charts with raw statistics (size) based on whatever dimension you
     care about
     '''
-    esd = df.groupby(dimension, as_index=False).size()
+    esd = df.groupby(dimension, as_index=True).size()
     config = {'staticPlot': True}
-    fig = px.pie(esd, values='size', names=dimension, hole = 0.3)
+    fig = px.pie(esd, values=esd.values, names=esd.index,hole = 0.3)
     fig.update_layout(uniformtext_minsize=9, uniformtext_mode='hide')
     #fig.show(config)
     file_name = dimension
@@ -50,12 +54,14 @@ plot_feature_stats(aayme_applications, 'Household Income')
 Creating a geospatial map of the application submission. This will be done be joining the county 
 zip codes in the data with the US Census geoJSON zip codes
 '''
-geo_group = aayme_applications.groupby('Postal / Zip Code')
+aayme_applications['Actual Sch. Postal / Zip Code'] = aayme_applications['Actual Sch. Postal / Zip Code'].astype(int)
+geo_group = aayme_applications.groupby('Actual Sch. Postal / Zip Code')
 geo_agg = geo_group.agg({
                        'Entry Id': pd.Series.nunique,
                         })
 geo_agg.rename(columns = {'Entry Id':'total_applications'}, inplace = True)
 geo_agg.reset_index(inplace=True)
+geo_agg['Actual Sch. Postal / Zip Code'] = geo_agg['Actual Sch. Postal / Zip Code'].astype(str)
 
 # load GeoJSON
 with open('../data/ms_mississippi_zip_codes_geo.min.json', 'r') as jsonFile:
@@ -65,7 +71,7 @@ tmp = data
 # remove ZIP codes not in our dataset
 geozips = []
 for i in range(len(tmp['features'])):
-    if tmp['features'][i]['properties']['ZCTA5CE10'] in list(geo_agg['Postal / Zip Code'].unique()):
+    if tmp['features'][i]['properties']['ZCTA5CE10'] in list(geo_agg['Actual Sch. Postal / Zip Code'].unique()):
         geozips.append(tmp['features'][i])
 
 # creating new JSON object
@@ -106,6 +112,8 @@ def create_map(table, zips, mapped_feature, add_text = ''):
     folium.LayerControl().add_to(m)
     # save map with filename based on the feature of interest
     m.save(outfile = "../images/" + mapped_feature + '_map.html')
+    
+
 
 # Call the create_map function which writes the map to an html file
-create_map(geo_agg, 'Postal / Zip Code', 'total_applications') 
+create_map(geo_agg, 'Actual Sch. Postal / Zip Code', 'total_applications') 
