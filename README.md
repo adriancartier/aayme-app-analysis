@@ -1,6 +1,9 @@
-## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Top contributors
-[![Top contributors](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/top-contributors/5869c5fb1675936d62544c9924762d66_table.svg)](https://github.com/adriancartier/aayme-app-analysis/graphs/contributors)
-
+## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/recent-activity/5869c5fb1675936d62544c9924762d66_badge.svg)](https://repography.com)
+[![Timeline graph](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/recent-activity/5869c5fb1675936d62544c9924762d66_timeline.svg)](https://github.com/adriancartier/aayme-app-analysis/commits)
+[![Issue status graph](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/recent-activity/5869c5fb1675936d62544c9924762d66_issues.svg)](https://github.com/adriancartier/aayme-app-analysis/issues)
+[![Pull request status graph](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/recent-activity/5869c5fb1675936d62544c9924762d66_prs.svg)](https://github.com/adriancartier/aayme-app-analysis/pulls)
+[![Trending topics](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/recent-activity/5869c5fb1675936d62544c9924762d66_words.svg)](https://github.com/adriancartier/aayme-app-analysis/commits)
+[![Top contributors](https://images.repography.com/25933851/adriancartier/aayme-app-analysis/recent-activity/5869c5fb1675936d62544c9924762d66_users.svg)](https://github.com/adriancartier/aayme-app-analysis/graphs/contributors)
 # Analysis of AAYME Application Submissions
 This repository contains simple EDA on the submissions to the AAYME Summer Camp. To execute the python script it's best to use a virtual environment. 
 
